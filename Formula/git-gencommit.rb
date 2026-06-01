@@ -8,7 +8,6 @@ class GitGencommit < Formula
 
   depends_on "cmake" => :build
   depends_on "curl"
-  uses_from_macos "git"
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
