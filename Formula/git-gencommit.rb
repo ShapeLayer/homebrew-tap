@@ -8,6 +8,7 @@ class GitGencommit < Formula
 
   depends_on "cmake" => :build
   depends_on "curl"
+  uses_from_macos "git"
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
@@ -16,7 +17,7 @@ class GitGencommit < Formula
   end
 
   test do
-    output = shell_output("#{bin}/git-gencommit --help")
+    output = shell_output("git gencommit -h")
     assert_match "Usage:", output
     assert_match "--print-message", output
   end
