@@ -12,7 +12,7 @@ class GitGencommit < Formula
   def install
     # Reuse upstream installer script while keeping Homebrew installation paths.
     ENV["HOME"] = buildpath
-    system "bash", "-c", "scripts/install-git-gencommit.sh < /dev/null"
+    system "bash", "scripts/install-git-gencommit.sh"
 
     bin.install buildpath/"bin/git-gencommit"
   end
